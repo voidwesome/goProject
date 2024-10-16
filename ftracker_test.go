@@ -14,6 +14,14 @@ func Test_distance(t *testing.T) {
 		want float64
 	}{
 		// TODO: Add test cases.
+
+		{
+			name: "Success test",
+			args: args{
+				action: 4000,
+			},
+			want: 2.6,
+		},
 		{
 			name: "Success test",
 			args: args{
@@ -56,6 +64,22 @@ func Test_meanSpeed(t *testing.T) {
 		want float64
 	}{
 		// TODO: Add test cases.
+		{
+			name: "Negative value of speed",
+			args: args{
+				action:   -1000,
+				duration: 2.0,
+			},
+			want: -0.325,
+		},
+		{
+			name: "Successful test",
+			args: args{
+				action:   5500,
+				duration: 5.5,
+			},
+			want: 0.65,
+		},
 		{
 			name: "Successful test",
 			args: args{
@@ -159,6 +183,19 @@ func TestShowTrainingInfo(t *testing.T) {
 				height:       185,
 				lengthPool:   50,
 				countPool:    2,
+			},
+			want: unknownTest,
+		},
+		{
+			name: "unknown test",
+			args: args{
+				action:       2300,
+				trainingType: "Гандбол",
+				duration:     3,
+				weight:       80,
+				height:       186,
+				lengthPool:   25,
+				countPool:    4,
 			},
 			want: unknownTest,
 		},
